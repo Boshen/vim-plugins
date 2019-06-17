@@ -2,3 +2,24 @@ snippet console-log
 alias c cl
 options head
   console.log(${0:TARGET})
+
+snippet template
+alias temp
+options head
+  <template>
+    <div>
+      template
+    </div>
+  </template>
+
+  <script lang="ts">
+  import Vue from 'vue'
+  import Component from 'vue-class-component'
+
+  @Component({})
+  export default class ${0:TARGET} extends Vue {
+  }
+  </script>
+
+  <style>
+  </style>
