@@ -7,16 +7,15 @@ snippet template
 alias temp
 options head
   <template>
-    <div>
-      template
-    </div>
+  <div>
+    template
+  </div>
   </template>
 
   <script lang="ts">
-  import Vue from 'vue'
-  import Component from 'vue-class-component'
+  import { Vue, Component } from 'vue-property-decorator'
 
-  @Component({})
+  @Component
   export default class ${0:TARGET} extends Vue {
   }
   </script>
