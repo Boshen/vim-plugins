@@ -28,14 +28,20 @@ snippet ir
   import React from 'react'
 snippet ird
   import ReactDOM from 'react-dom'
-snippet useState
+snippet state
   const [state, setState] = useState({})
+snippet effect
+  useEffect(() => {
+  }, [])
+snippet f
+  const ${1:FunctionName} = () => {
+  }
 
 snippet react
   import React from 'react'
 
   export const ${1:ClassName} = () => {
     return (
-      ${0:<div />}
+      <div />
     )
   }
