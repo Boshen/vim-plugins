@@ -25,9 +25,9 @@ options     head
 
 # React
 snippet ir
-  import React from 'react'
+  import * as React from 'react'
 snippet ird
-  import ReactDOM from 'react-dom'
+  import * as ReactDOM from 'react-dom'
 snippet state
   const [state, setState] = useState({})
 snippet effect
@@ -38,10 +38,12 @@ snippet f
   }
 
 snippet react
-  import React from 'react'
+  import * as React from 'react'
 
   export const ${1:ClassName} = () => {
     return (
-      <div />
+      <div>
+        ${2:Name}
+      </div>
     )
   }
