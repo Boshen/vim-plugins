@@ -38,15 +38,16 @@ snippet f
   }
 
 snippet react
+abbr    react NAME {...}
+options head
   import * as React from 'react'
 
-  interface ${1:ClassName}Props {
+  interface ${1:#:NAME}Props {
   }
 
-  export const ${1:ClassName}: React.FC<${1: ClassName}Props> = () => {
+  export const ${1:#:NAME}: React.FC<${1:#:NAME}Props> = () => {
     return (
       <div>
-        ${2:Name}
       </div>
     )
   }
