@@ -40,7 +40,10 @@ snippet f
 snippet react
   import * as React from 'react'
 
-  export const ${1:ClassName} = () => {
+  interface ${1:ClassName}Props {
+  }
+
+  export const ${1:ClassName}: React.FC<${1: ClassName}Props> = () => {
     return (
       <div>
         ${2:Name}
