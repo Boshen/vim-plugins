@@ -51,3 +51,39 @@ options head
       </div>
     )
   }
+
+snippet controller
+abbr controller NAME {...}
+  import { Controller } from '@nestjs/common'
+  import { ApiTags } from '@nestjs/swagger'
+
+  import { DummyService } from './dummy.service'
+
+  @ApiTags('Dummy')
+  @Controller('/api/dummys')
+  export class DummyController {
+    constructor(private readonly dummyService: DummyService) {}
+  }
+
+snippet service
+abbr service NAME {...}
+  import { Injectable } from '@nestjs/common'
+
+  @Injectable()
+  export class DummyService {
+  }
+
+snippet module
+abbr module NAME {...}
+  import { Module } from '@nestjs/common'
+
+  import { DummyController } from './follow.controller'
+  import { DummyService } from './follow.service'
+
+  @Module({
+    imports: [],
+    providers: [DummyService],
+    controllers: [DummyController],
+    exports: [DummyService],
+  })
+  export class DummyModule {}
