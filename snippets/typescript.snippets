@@ -1,0 +1,64 @@
+snippet c "console.log"
+console.log(${0})
+
+# React
+snippet ir "import react"
+import * as React from 'react'
+
+snippet ird 'import react dom'
+import * as ReactDOM from 'react-dom'
+
+snippet st "useState"
+const [state, setState] = useState({})
+
+snippet ef "useEffect"
+useEffect(() => {
+}, [])
+
+snippet f "function"
+const ${1:FunctionName} = () => {
+}
+
+snippet react "react"
+import * as React from 'react'
+
+export const ${1} = () => {
+	return (
+		<div>
+		</div>
+	)
+}
+
+# nestjs
+snippet controller "controller"
+import { Controller } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
+
+import { DummyService } from './dummy.service'
+
+@ApiTags('Dummy')
+@Controller('/api/dummys')
+export class DummyController {
+	constructor(private readonly dummyService: DummyService) {}
+}
+
+snippet service "service"
+import { Injectable } from '@nestjs/common'
+
+@Injectable()
+export class DummyService {
+}
+
+snippet module "module"
+import { Module } from '@nestjs/common'
+
+import { DummyController } from './dummy.controller'
+import { DummyService } from './dummy.service'
+
+@Module({
+	imports: [],
+	providers: [DummyService],
+	controllers: [DummyController],
+	exports: [DummyService],
+})
+export class DummyModule {}
