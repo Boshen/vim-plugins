@@ -1,1 +1,26 @@
-extends typescript
+snippet c "console.log"
+console.log(${0})
+
+# React
+snippet ir "import react"
+import * as React from 'react'
+
+snippet ird 'import react dom'
+import * as ReactDOM from 'react-dom'
+
+snippet us "useState"
+const [state, setState] = useState({})
+
+snippet uf "useEffect"
+useEffect(() => {
+}, [])
+
+snippet react "react"
+import * as React from 'react'
+
+export const ${1} = () => {
+	return (
+		<div>
+		</div>
+	)
+}
