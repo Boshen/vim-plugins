@@ -11,7 +11,7 @@ import { DummyService } from './dummy.service'
 @ApiTags('Dummy')
 @Controller('/api/dummys')
 export class DummyController {
-	constructor(private readonly dummyService: DummyService) {}
+  constructor(private readonly dummyService: DummyService) {}
 }
 
 snippet service "service"
@@ -28,9 +28,9 @@ import { DummyController } from './dummy.controller'
 import { DummyService } from './dummy.service'
 
 @Module({
-	imports: [],
-	providers: [DummyService],
-	controllers: [DummyController],
-	exports: [DummyService],
+  imports: [],
+  providers: [DummyService],
+  controllers: [DummyController],
+  exports: [DummyService],
 })
 export class DummyModule {}
