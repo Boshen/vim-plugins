@@ -9,10 +9,11 @@ snippet ird 'import react dom'
 import * as ReactDOM from 'react-dom'
 
 snippet us "useState"
-const [state, setState] = useState({})
+const [state, setState] = React.useState({})
 
 snippet ue "useEffect"
-useEffect(() => {
+React.useEffect(() => {
+  ${1}
 }, [])
 
 snippet react "react"
