@@ -2,24 +2,6 @@ snippet c "console.log"
 console.log(${0})
 
 # nestjs
-snippet controller "controller"
-import { Controller } from '@nestjs/common'
-import { ApiTags } from '@nestjs/swagger'
-
-import { DummyService } from './dummy.service'
-
-@ApiTags('Dummy')
-@Controller('/api/dummys')
-export class DummyController {
-  constructor(private readonly dummyService: DummyService) {}
-}
-
-snippet service "service"
-import { Injectable } from '@nestjs/common'
-
-@Injectable()
-export class DummyService {
-}
 
 snippet module "module"
 import { Module } from '@nestjs/common'
@@ -34,3 +16,40 @@ import { DummyService } from './dummy.service'
   exports: [DummyService],
 })
 export class DummyModule {}
+
+snippet controller "controller"
+import { Controller } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
+
+import { DummyService } from './dummy.service'
+
+@ApiTags('Dummy')
+@Controller('/api/dummys')
+export class DummyController {
+  constructor(private readonly dummyService: DummyService) {}
+}
+
+snippet service "service"
+import { Injectable, Inject } from '@nestjs/common'
+
+import { DummyModel } from './dummy.model'
+
+@Injectable()
+export class DummyService {
+  constructor(
+    @Inject(DummyModel) private readonly Dummy: typeof DummyModel,
+  ) {}
+}
+
+snippet module "resolver"
+import { Resolver } from '@nestjs/graphql'
+
+import { Dummy  } from './dummy.schema'
+import { DummyService  } from './mention.service'
+
+@Resolver(() => Dummy)
+export class DummyResolver {
+  constructor(
+    private readonly dummyService: DummyService
+  ) { }
+}
