@@ -17,6 +17,7 @@ import { DummyService } from './dummy.service'
 })
 export class DummyModule {}
 
+
 snippet controller "controller"
 import { Controller } from '@nestjs/common'
 import { ApiTags } from '@nestjs/swagger'
@@ -28,6 +29,7 @@ import { DummyService } from './dummy.service'
 export class DummyController {
   constructor(private readonly dummyService: DummyService) {}
 }
+
 
 snippet service "service"
 import { Injectable, Inject } from '@nestjs/common'
@@ -41,11 +43,12 @@ export class DummyService {
   ) {}
 }
 
+
 snippet module "resolver"
 import { Resolver } from '@nestjs/graphql'
 
 import { Dummy  } from './dummy.schema'
-import { DummyService  } from './mention.service'
+import { DummyService  } from './dummy.service'
 
 @Resolver(() => Dummy)
 export class DummyResolver {
