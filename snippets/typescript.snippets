@@ -7,11 +7,12 @@ snippet module "module"
 import { Module } from '@nestjs/common'
 
 import { DummyController } from './dummy.controller'
+import { DummyResolver } from './dummy.resolver'
 import { DummyService } from './dummy.service'
 
 @Module({
   imports: [],
-  providers: [DummyService],
+  providers: [DummyResolver, DummyService],
   controllers: [DummyController],
   exports: [DummyService],
 })
@@ -55,4 +56,22 @@ export class DummyResolver {
   constructor(
     private readonly dummyService: DummyService
   ) { }
+}
+
+snippet module "resolver"
+import { UseGuards } from '@nestjs/common'
+import { Query, Resolver } from '@nestjs/graphql'
+import { JwtGuard } from '@web/nestjs-common'
+
+import { DummyService } from './dummy.service'
+
+@UseGuards(JwtGuard)
+@Resolver(() => Dummy)
+export class DummyResolver {
+  constructor(private readonly dummyService: DummyService) {}
+
+  @Query(() => Boolean)
+  async query() {
+    return this.dummyService.get()
+  }
 }
