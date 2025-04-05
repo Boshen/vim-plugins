@@ -19,7 +19,7 @@ hi CursorLineNr    ctermfg=208               cterm=none
 hi Debug           ctermfg=225               cterm=bold
 hi Define          ctermfg=81
 hi Delimiter       ctermfg=241
-hi DiffAdd                     ctermbg=24
+hi DiffAdd         ctermfg=34 ctermbg=24
 hi DiffChange      ctermfg=181 ctermbg=239
 hi DiffDelete      ctermfg=162 ctermbg=53
 hi DiffText                    ctermbg=102   cterm=bold
@@ -33,7 +33,8 @@ hi Folded          ctermfg=67  ctermbg=16
 hi Function        ctermfg=118
 hi Identifier      ctermfg=208               cterm=none
 hi Ignore          ctermfg=244 ctermbg=232
-hi IncSearch       ctermfg=193 ctermbg=16
+hi IncSearch       ctermfg=0 ctermbg=222
+hi Substitute      ctermfg=160 ctermbg=16
 hi Label           ctermfg=161               cterm=bold
 hi LineNr          ctermfg=250 ctermbg=236
 hi Macro           ctermfg=193
